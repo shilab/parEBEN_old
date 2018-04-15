@@ -10,7 +10,7 @@ Epistasis reflects the joint effect of more than one genes or variants on a phen
 
 ## Dataset
 
-The yeast dataset is obtained from Bloom et al (2015) including 4,390 samples and 28,220 SNPs.
+The yeast dataset is obtained from Bloom et al (2015) including 4,390 samples and 28,220 SNPs [1].
 
 
 ## Reference
