@@ -25,5 +25,14 @@ output <- CrossValidate(as.matrix(genotype[,2:ncol(genotype)]),
                         prior = "gaussian",
                         search = "global")
 
-saveRDS(output,"SubsetParCV_4-15-2018.RDS")
+saveRDS(output,"SubsetParCV_4-18-2018_cvoutput.RDS")
+
+model <- EBelasticNet.Gaussian(as.matrix(genotype[,2:ncol(genotype)]),
+                               phenotype$y,
+                               lambda = output$lambda.optimal,
+                               alpha = output$alpha.optimal,
+                               Epis = "no")
+
+saveRDS(model,"SubsetParCV_4-18-2018_model.RDS")
+
 
