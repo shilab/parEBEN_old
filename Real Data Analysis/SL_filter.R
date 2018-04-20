@@ -67,4 +67,4 @@ res <- rbind(sig_main,sig_epi_sum);
 fdr = matrix(p.adjust(res[,3,drop=FALSE], method = "fdr"),ncol = 1);
 fdr = format(fdr,sci=FALSE);
 Blup <- cbind(res,fdr);
-write.table(Blup,"Blup_real_res_0.18",quote=F,sep="\t",col.names = F,row.names = T)
+write.table(Blup,"Blup_real_res",quote=F,sep="\t",col.names = F,row.names = T)
