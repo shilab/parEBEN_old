@@ -28,8 +28,8 @@ cl <- makeCluster(no_cores)
 registerDoParallel(cl)
 #stopImplicitCluster()
 
-#for (i in 1:nrow(tests)){
-for (i in 9:nrow(tests)){
+for (i in 1:nrow(tests)){
+#for (i in c(60)){
   n <- tests[i,1]
   k <- tests[i,2]
   nFolds <- tests[i,3]
@@ -41,16 +41,16 @@ for (i in 9:nrow(tests)){
   yset  <- matrix(pheno1[1:n,],ncol=1)
   class(yset) <- "numeric"
   cat("Iteration:",i ," (n:", n,"k:", k,"nFolds:", nFolds,")\n")
-  sertime <- system.time(EBelasticNet.GaussianCV(BASISset,yset, nFolds, Epis = "no"))
+  sertime <- system.time(EBelasticNet.GaussianCV(BASISset,yset, nFolds, Epis = "yes"))
   tests[i,4] <- sertime[1]
   tests[i,5] <- sertime[2]
   tests[i,6] <- sertime[3]
-  partime <- system.time(CrossValidate(BASISset, yset, nFolds, Epis = "no", prior = "gaussian", search = "local"))
+  partime <- system.time(CrossValidate(BASISset, yset, nFolds, Epis = "yes", prior = "gaussian", search = "local"))
   tests[i,7] <- partime[1]
   tests[i,8] <- partime[2]
   tests[i,9] <- partime[3]
   gc()
-  write_csv(tests[i,], "testoutput_time_4-11-2018_gaussian_cf.csv", append = TRUE)
+  write_csv(tests[i,], "testoutput_time_4-12-2018_gaussian_EPIS_cf.csv", append = TRUE)
 }
 
 
