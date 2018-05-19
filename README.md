@@ -1,6 +1,6 @@
 # New strategies toward scaling up epistasis analysis on large-scale genomic datasets
 
-<h4 align = "right">Jia Wen, Colby Ford, Daniel Janies, Xinghua Shi</h4>
+<h4 align = "right">Jia Wen*, Colby Ford*, Daniel Janies, Xinghua Shi</h4>
 <h4 align = "right">Department of Bioinformatics and Genomics, University of North Carolina at Charlotte, 28223 USA</h4>
 
 ## Abstract
